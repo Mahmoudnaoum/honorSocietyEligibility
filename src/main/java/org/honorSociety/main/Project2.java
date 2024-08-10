@@ -16,7 +16,7 @@ import java.util.Objects;
 public class Project2 {
     public static void main(String[] args) {
 
-        ArrayList<Student> students = new ArrayList<Student>();
+        ArrayList<Student> students = new ArrayList<>();
 
             try (BufferedReader reader = new BufferedReader(
                 new InputStreamReader(Objects.requireNonNull(Project2.class.getClassLoader().getResourceAsStream("students.txt"))))) {
@@ -54,8 +54,8 @@ public class Project2 {
     }
 
     private static Student parseStudent(String name, double creditHours, double qualityPoints, String stateOrDegree) {
-        StudentYear year = null;
-        Degree degree = null;
+        StudentYear year;
+        Degree degree;
         for( StudentYear yearValue : StudentYear.values()) {
             if (stateOrDegree.equalsIgnoreCase(yearValue.toString())) {
                 year = yearValue;

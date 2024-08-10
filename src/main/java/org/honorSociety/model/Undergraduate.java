@@ -3,15 +3,11 @@ package org.honorSociety.model;
 import org.honorSociety.model.common.StudentYear;
 
 public class Undergraduate extends Student{
-    private StudentYear year;
+    private final StudentYear year;
     public Undergraduate(String name, Double creditHoursEarned, Double qualityPoints, StudentYear year) {
         super(name, creditHoursEarned, qualityPoints);
         this.year = year;
 
-    }
-
-    public Undergraduate(String name, Double creditHoursEarned, Double qualityPoints) {
-        super(name, creditHoursEarned, qualityPoints);
     }
 
     @Override
@@ -28,11 +24,4 @@ public class Undergraduate extends Student{
         return super.toString() + " " + year.toString();
     }
 
-    public StudentYear getYear() {
-        return year;
-    }
-
-    public void setYear(StudentYear year) {
-        this.year = year;
-    }
 }
